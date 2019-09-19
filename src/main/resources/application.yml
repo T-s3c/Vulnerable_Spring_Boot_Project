@@ -1,0 +1,19 @@
+server:
+  port: 8001
+
+  jpa:
+    properties:
+      hibernate:
+        dialect=org:
+          hibernate:
+            dialect: org.hibernate.dialect.H2Dialect
+  h2:
+    console:
+      enabled: true
+
+spring:
+  datasource:
+    password: admin
+    username: admin
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
