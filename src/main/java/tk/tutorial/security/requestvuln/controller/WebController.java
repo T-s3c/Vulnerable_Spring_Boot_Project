@@ -52,7 +52,7 @@ public class WebController {
     }
 
 
-    // TODO https://github.com/WebGoat/WebGoat/blob/develop/webgoat-lessons/insecure-login/src/main/java/org/owasp/webgoat/plugin/InsecureLoginTask.java
+/*    // TODO https://github.com/WebGoat/WebGoat/blob/develop/webgoat-lessons/insecure-login/src/main/java/org/owasp/webgoat/plugin/InsecureLoginTask.java
     // Insecure Login function
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public boolean loginTask(@RequestParam String username, @RequestParam String password) {
@@ -62,7 +62,7 @@ public class WebController {
         } else {
             return false;
         }
-    }
+    }*/
 
     // TODO COMMAND LINE INJECTION
     @RequestMapping(value = "ping/{command}", method = RequestMethod.GET)
