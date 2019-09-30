@@ -1,1 +1,1 @@
-SELECT * FROM COMMENTARY c;
+SELECT * FROM COMMENTARY c WHERE c.id = ${templateId};

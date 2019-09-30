@@ -37,8 +37,9 @@ public class CommentaryController {
     }
 
     // Potential template injection with Velocity
-    @RequestMapping(value = "template/{id}" , method = RequestMethod.GET)
-    public Commentary getAllCommentaryByTemplate(@PathVariable Long id) throws Exception {
+    // http://localhost:8001/commentary/template/1%20or%20%271%27%20%3D%20%271%27
+    @RequestMapping(value = "template/{id}", method = RequestMethod.GET)
+    public List<Commentary> getCommentaryByIdWithTemplate(@PathVariable String id) throws Exception {
         VelocityEngine velocityEngine = new VelocityEngine();
         velocityEngine.init();
 
@@ -51,6 +52,6 @@ public class CommentaryController {
 
         template.merge(velocityContext, stringWriter);
 
-        return jdbcTemplate.queryForObject(stringWriter.toString(), new Object[]{}, new CommentaryRowMapper());
+        return jdbcTemplate.query(stringWriter.toString(), new CommentaryRowMapper());
     }
 }

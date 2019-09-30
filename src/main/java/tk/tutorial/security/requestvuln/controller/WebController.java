@@ -9,17 +9,13 @@ import java.io.File;
 import java.io.IOException;
 
 @RestController
-@CrossOrigin(origins = "http:localhost:4200")
+@CrossOrigin
 @RequestMapping("controllers")
 public class WebController {
 
     @Autowired
     private PersonRepository personRepository;
 
-    @RequestMapping("/")
-    public String index() {
-        return "index";
-    }
 
     @RequestMapping(value = "/all", method = RequestMethod.GET)
     public Iterable<Person> getAllPersons() {
