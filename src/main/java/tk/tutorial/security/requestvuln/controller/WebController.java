@@ -29,8 +29,9 @@ public class WebController {
 
     @RequestMapping(value = "/password/{id}", method = RequestMethod.GET)
     public Person getUserById(@PathVariable("id") Long id) {
-        Person foundPerson = personRepository.findById(id).orElseThrow();
-        return foundPerson;
+        //Person foundPerson = personRepository.findById(id).orElseThrow();
+        //return foundPerson;
+        return null;
     }
 
     @RequestMapping(value = "/delete")
