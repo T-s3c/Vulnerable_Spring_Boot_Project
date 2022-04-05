@@ -1,4 +1,4 @@
-package tk.tutorial.security.requestvuln;
+package tk.tutorial.security.project;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

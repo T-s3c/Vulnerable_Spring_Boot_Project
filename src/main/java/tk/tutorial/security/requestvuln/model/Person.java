@@ -5,7 +5,6 @@ import lombok.*;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import java.util.Date;
 
 
 @Entity
@@ -16,34 +15,26 @@ import java.util.Date;
 @Builder
 public class Person {
 
-    @Id
-    @GeneratedValue
-    private Long id;
+	@Id
+	@GeneratedValue
+	private Long id;
 
-    private String firstName;
+	private String firstName;
 
-    private String lastName;
+	private String lastName;
 
-    private String postalcode;
+	private String postalcode;
 
-    private Date birthDate;
+	private String username;
 
-    private Gender gender;
+	// TODO 2017:A3 Sensitive Date Exposure
+	private String password;
 
-    private String username;
-
-    private String password;
-
-    private MaritalStatus maritalStatus;
-
-    public Person(String firstName, String lastName, String postalcode, Date birthDate, Gender gender, String username, String password, MaritalStatus maritalStatus) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.postalcode = postalcode;
-        this.birthDate = birthDate;
-        this.gender = gender;
-        this.username = username;
-        this.password = password;
-        this.maritalStatus = maritalStatus;
-    }
+	public Person(String firstName, String lastName, String postalcode, String username, String password) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.postalcode = postalcode;
+		this.username = username;
+		this.password = password;
+	}
 }

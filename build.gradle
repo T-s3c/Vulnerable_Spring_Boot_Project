@@ -1,9 +1,9 @@
 plugins {
-    id 'org.springframework.boot' version '2.1.8.RELEASE'
-    id 'io.spring.dependency-management' version '1.0.8.RELEASE'
-    id 'java'
-    id "org.sonarqube" version "2.7"
-    id "com.github.spotbugs" version "2.0.1"
+	id 'org.springframework.boot' version '2.1.8.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+	id 'java'
+	id "org.sonarqube" version "2.7"
+	id "com.github.spotbugs" version "2.0.1"
 }
 
 
@@ -12,33 +12,33 @@ version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
 configurations {
-    compileOnly {
-        extendsFrom annotationProcessor
-    }
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
 }
 
 
 
 repositories {
-    mavenCentral()
+	mavenCentral()
 }
 
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-web'
-    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa'
-    compileOnly 'org.projectlombok:lombok'
-    annotationProcessor 'org.projectlombok:lombok'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    runtimeOnly 'com.h2database:h2:1.4.199'
-    compile group: 'org.apache.velocity', name: 'velocity', version: '1.6.2'
-    compile group: 'commons-io', name: 'commons-io', version: '2.6'
-    compile group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '2.1.8.RELEASE'
-    compile("org.springframework.boot:spring-boot-starter-thymeleaf")
-    //compile group: 'org.springframework.boot', name: 'spring-boot-starter-actuator', version: '2.1.9.RELEASE'
-    compileOnly('org.springframework.boot:spring-boot-configuration-processor')
-    testCompile('org.junit.jupiter:junit-jupiter:5.4.0')
-    spotbugsPlugins 'com.h3xstream.findsecbugs:findsecbugs-plugin:1.7.1'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa'
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	runtimeOnly 'com.h2database:h2:1.4.199'
+	compile group: 'org.apache.velocity', name: 'velocity', version: '1.6.2'
+	compile group: 'commons-io', name: 'commons-io', version: '2.6'
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '2.1.8.RELEASE'
+	compile("org.springframework.boot:spring-boot-starter-thymeleaf")
+	//compile group: 'org.springframework.boot', name: 'spring-boot-starter-actuator', version: '2.1.9.RELEASE'
+	compileOnly('org.springframework.boot:spring-boot-configuration-processor')
+	testCompile('org.junit.jupiter:junit-jupiter:5.4.0')
+	spotbugsPlugins 'com.h3xstream.findsecbugs:findsecbugs-plugin:1.7.1'
 }
 
 
