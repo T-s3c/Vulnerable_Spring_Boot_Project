@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="UTF-8">
+	<title>Show All Persons</title>
+</head>
+<body>
+<h1>All Persons</h1>
+<table>
+	<tr>
+		<th>ID</th>
+		<th>First Name</th>
+		<th>Last Name</th>
+		<th>Postal code</th>
+		<th>Username</th>
+	</tr>
+	<tr th:each="person : ${persons}">
+		<td th:text="${person.id}"></td>
+		<td th:utext="${person.firstName}"></td>
+		<td th:utext="${person.lastName}"></td>
+		<td th:utext="${person.postalcode}"></td>
+		<td th:utext="${person.username}"></td>
+	</tr>
+</table>
+
+<form th:action="@{view_create}" method="get">
+	<input type="submit" value="Create Person"/>
+</form>
+<form th:action="@{/hello}" method="get">
+	<input type="submit" value="Back to hello"/>
+</form>
+<form th:action="@{single}" method="get">
+	<input type="submit" value="Get Single Person"/>
+</form>
+<div th:if="${#httpServletRequest.remoteUser} != 'user'">
+	<form th:action="@{delete}" method="get">
+		<input type="submit" value="Delete Person"/>
+	</form>
+</div>
+<form th:action="@{createwithjson}" method="get">
+	<input type="submit" value="Upload Person with JSON"/>
+</form>
+</body>
+</html>
