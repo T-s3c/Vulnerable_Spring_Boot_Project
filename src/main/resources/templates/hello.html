@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+>
+<head>
+    <title>Hello World!</title>
+</head>
+<body>
+<h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Sign Out"/>
+</form>
+
+<form th:action="@{/greeting}" method="get">
+    <input type="submit" value="Greeting"/>
+</form>
+
+<form th:action="@{/greeting/stage1}" method="get">
+    <input type="submit" value="Greeting Stage1"/>
+</form>
+
+<form th:action="@{/greeting/stage2}" method="get">
+    <input type="submit" value="Greeting Stage 2"/>
+</form>
+
+<form th:action="@{/commentary}" method="get">
+    <input type="submit" value="Commentary"/>
+</form>
+
+<form th:action="@{person/all}" method="get">
+    <input type="submit" value="Person"/>
+</form>
+
+<form th:action="@{download}" method="get">
+    <input type="submit" value="Download"/>
+</form>
+<div th:if="${#httpServletRequest.remoteUser} != 'user'">
+    <form  th:action="@{admin}" method="get">
+        <input type="submit" value="Admin"/>
+    </form>
+</div>
+
+</div>
+<div th:if="${cookieValue}">
+    <h1>Cookie Value</h1>
+    <p th:utext="${cookieValue}"></p>
+</div>
+
+<div th:if="${#httpServletRequest.remoteUser} == 'user'">
+    <h1>Tipps for user:</h1>
+    <p>/admin -> possible without admin privileges</p>
+
+</div>
+</body>
+</html>

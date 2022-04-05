@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Commentary</title>
+</head>
+<body>
+<h1>Search field</h1>
+<p>Example for a UNION Attack: erst%' UNION SELECT id, password FROM PERSON --</p>
+<form method="post" th:action="@{/commentary/search}">
+    <p>SearchString: <input type="text" th:name="searchString"/></p>
+    <div class="clearfix">
+        <button type="submit">Search</button>
+    </div>
+</form>
+
+
+<h1>Text to search for a commentary</h1>
+<p>Paramter:<b th:utext="${searchString}"></b></p>
+
+<h1>Result: <b th:text="${results}"></b></h1>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Text</th>
+    </tr>
+    <tr th:each="commentary : ${commentaries}">
+        <td th:text="${commentary.id}"></td>
+        <td th:utext="${commentary.text}"></td>
+    </tr>
+</table>
+
+<br>
+<br>
+<div>
+    <form th:action="@{/hello}" method="get">
+        <input type="submit" value="Hello"/>
+    </form>
+</div>
+</body>
+</html>

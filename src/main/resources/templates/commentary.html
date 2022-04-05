@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Commentary</title>
+</head>
+<body>
+<h1>All Commentaries</h1>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Text</th>
+    </tr>
+    <tr th:each="commentary : ${commentaries}">
+        <td th:text="${commentary.id}"></td>
+        <td th:utext="${commentary.text}"></td>
+    </tr>
+</table>
+
+<form th:action="@{/createcommentary}" methd="get">
+    <input type="submit" value="Create Commentary"/>
+</form>
+<form th:action="@{/search}" methd="get">
+    <input type="submit" value="Search for Commentary"/>
+</form>
+
+<form th:action="@{/template}" method="get">
+    <input type="submit" value="Search for Commentary through Template"/>
+</form>
+
+<form th:action="@{/file}" method="get">
+    <input type="submit" value="Create Commentary with XML"/>
+</form>
+
+<form th:action="@{/hello}" method="get">
+    <input type="submit" value="Back to hello"/>
+</form>
+
+</body>
+</html>

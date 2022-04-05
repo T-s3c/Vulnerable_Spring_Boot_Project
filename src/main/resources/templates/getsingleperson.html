@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="UTF-8">
+	<title>Get Single Person</title>
+</head>
+<body>
+<h1>Get Single Person</h1>
+<p>// http://localhost:8001/person/getSinglePerson/1%27%20or%20%271%27%3D%271</p>
+<h1>Result:</h1>
+<table>
+	<tr>
+		<th>ID</th>
+		<th>Text</th>
+	</tr>
+	<tr th:each="person : ${persons}">
+		<td th:text="${person.id}"></td>
+		<td th:text="${person.firstName}"></td>
+		<td th:text="${person.lastName}"></td>
+		<td th:text="${person.postalcode}"></td>
+		<td th:text="${person.username}"></td>
+	</tr>
+</table>
+
+<form th:action="@{/hello}" method="get">
+	<input type="submit" value="Back to hello"/>
+</form>
+</body>
+</html>

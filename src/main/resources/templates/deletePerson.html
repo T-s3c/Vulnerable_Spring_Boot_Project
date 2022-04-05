@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="UTF-8">
+	<title>Delete Person</title>
+</head>
+<body>
+<h1>Delete one Person (only for admins)</h1>
+<form th:action="@{/person/delete}" method="post" th:object="${person}">
+	<p>ID: <input type="text" th:field="*{id}"/></p>
+	<div class="clearfix">
+		<button type="submit">Delete</button>
+	</div>
+</form>
+</body>
+</html>
