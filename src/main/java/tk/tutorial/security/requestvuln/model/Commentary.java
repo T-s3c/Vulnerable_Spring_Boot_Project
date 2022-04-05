@@ -16,13 +16,13 @@ import javax.persistence.Id;
 @NoArgsConstructor
 public class Commentary {
 
-    @Id
-    @GeneratedValue
-    private Long id;
+	@Id
+	@GeneratedValue
+	private Long id;
 
-    private String text;
+	private String text;
 
-    public Commentary(String text) {
-        this.text = text;
-    }
+	public Commentary(String text) {
+		this.text = text;
+	}
 }
